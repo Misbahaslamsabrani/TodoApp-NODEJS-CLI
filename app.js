@@ -48,10 +48,10 @@ yargs.command({
 
 yargs.command({
     command: "list",
-    describe: "Showing Todo List . . . ",
+    describe: "Getting All Todo List . . . ",
     builder: {
         list: {
-            describe: "To show todo list",
+            describe: "To get all todos list",
             alias: "l",
         },
     },

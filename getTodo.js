@@ -8,7 +8,8 @@ const GET_TODO = (title) => {
         const isTaskExists = checkForTask(title, data);
         if (isTaskExists) {
             const task = data.find(v => v.title === title);
-            console.log(Chalk.blue.bold(task.description));
+            console.log(Chalk` {magenta ${task.title}}  {blue ${task.description}}`)
+            
         }
         else {
             console.log(Chalk.bold.red(`Sorry, this tittle '${title}' task doesn't exist.`))
