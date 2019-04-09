@@ -10,7 +10,7 @@ const DELETE_TODO = (title) => {
             SAVE_DATA(delTask);
         }
         else{
-            console.log(Chalk.bold.red(`Sorry, this tittle ${title} task doesn't exist.`))
+            console.log(Chalk.bold.red(`Sorry, this tittle '${title}' task doesn't exist.`))
         }
 }
 module.exports = DELETE_TODO;

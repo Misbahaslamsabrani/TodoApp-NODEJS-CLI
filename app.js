@@ -6,6 +6,7 @@ console.log(chalk.red.bold("Server Running. . . ."));
 const ADD_TODO = require("./addTodo");
 const DELETE_TODO = require("./deleteTodo");
 const SHOW_ALL_TODOS = require("./list");
+const GET_TODO = require("./getTodo");
 
 yargs.command({
     command: "add",
@@ -56,6 +57,22 @@ yargs.command({
     },
     handler(){
         SHOW_ALL_TODOS();
+    }
+})
+
+yargs.command({
+    command: "get",
+    describe: "Getting Todo . . . ",
+    builder: {
+        getTask: {
+            describe: "To get specific todo",
+            alias: "g",
+            demandOption: true,
+            type: "string",
+        },
+    },
+    handler({getTask}){
+        GET_TODO(getTask)
     }
 })
 

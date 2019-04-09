@@ -5,7 +5,7 @@ const SHOW_ALL_TODOS = () => {
     const data = LOAD_DATA();
     const isData = data.length > 0;
     if(isData){
-        console.log(Chalk.underline.green.bold("All Todos List: "))
+        console.log(Chalk.underline.green.bold("All Todos: "))
         data.map(d => {
             console.log(Chalk`  {magenta ${d.title}}`)
             console.log(Chalk.white("       " + d.description))
