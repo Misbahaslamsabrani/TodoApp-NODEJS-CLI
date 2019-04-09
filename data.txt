@@ -1,1 +1,1 @@
-[{"title":"learn linux","description":"learn linux so you can use docker on that"}]
+[{"title":"Study","description":"NODE.JS"},{"title":"Study in evening","description":"REdux"}]

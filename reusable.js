@@ -20,7 +20,18 @@ const checkDuplicate = (title, data) => {
     return dataFound === undefined ? false : true;
 }
 
+const checkForTask = (title, data) => {
+    const dataFound = data.find(d => d.title === title);
+    return dataFound !== undefined ? true : false;
+}
+
+const SAVE_DATA = (saveData) => {
+    const jsonData = JSON.stringify(saveData);
+    fs.writeFileSync("data.txt", jsonData);
+}
 module.exports = {
     LOAD_DATA,
-    checkDuplicate
+    checkDuplicate,
+    checkForTask,
+    SAVE_DATA,
 }

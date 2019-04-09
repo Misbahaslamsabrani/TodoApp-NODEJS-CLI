@@ -1,6 +1,6 @@
-const fs = require("fs");
 const Chalk = require("chalk");
-const {LOAD_DATA, checkDuplicate} = require("./reusable")
+const {LOAD_DATA, checkDuplicate, SAVE_DATA} = require("./reusable");
+
 const ADD_TODO = (title, description) => {
     const data = LOAD_DATA();
 
@@ -15,15 +15,9 @@ const ADD_TODO = (title, description) => {
             description,
         }
         const temArr = [...data, newTask];
-        SAVE_TODO(temArr);
-        console.log(Chalk.black.bgGreen("Succesfully, New task added!"))
+        console.log(Chalk.black.bgMagenta("Succesfully, New task added!"))
+        SAVE_DATA(temArr);
     }
-}
-
-const SAVE_TODO = (saveData) => {
-    const jsonData = JSON.stringify(saveData);
-    fs.writeFileSync("data.txt", jsonData)
-
 }
 
 module.exports = ADD_TODO;
